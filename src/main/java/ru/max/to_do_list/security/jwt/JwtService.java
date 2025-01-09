@@ -66,7 +66,7 @@ public class JwtService {
     }
 
     private String generateJwtToken(String email) {
-        Date date = Date.from(LocalDateTime.now().plusMinutes(1).atZone(ZoneId.systemDefault()).toInstant());
+        Date date = Date.from(LocalDateTime.now().plusHours(1).atZone(ZoneId.systemDefault()).toInstant());
         return Jwts.builder()
                 .subject(email)
                 .expiration(date)

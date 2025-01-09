@@ -1,0 +1,352 @@
+{
+  "info": {
+    "name": "spting-boot-to-do-list",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "All Completed Tasks",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/allCompletedTasks",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "allCompletedTasks"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "All Tasks",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/allTasks",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "allTasks"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Complete Task",
+      "event": [],
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/completeTask/1",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "completeTask",
+            "1"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Create Task",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/createTask",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "createTask"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"My First Task\",\n    \"description\": \"This is a description of my first task.\",\n    \"priority\": \"HIGH\",\n    \"deadline\": \"2025-01-10T12:00:00\",\n    \"completed\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Delete Task",
+      "event": [],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/deleteTask/1",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "deleteTask",
+            "1"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/login",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "login"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"maxac@gmail.com\",\n  \"password\": \"admin\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Registration",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/registration",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "registration"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Ant\",\n  \"lastName\": \"Max\",\n  \"email\": \"maxac@gmail.com\",\n  \"password\": \"admin\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Task By Id",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/task/1",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "task",
+            "1"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "event": [],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{protocol}}{{host}}:{{port}}/api/v1/tasks/updateTask/1",
+          "protocol": "",
+          "host": [
+            "{{protocol}}{{host}}:{{port}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tasks",
+            "updateTask",
+            "1"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"My First Task123123\",\n    \"description\": \"This is a description of my first task.\",\n    \"priority\": \"LOW\",\n    \"deadline\": \"2025-01-10T12:00:00\",\n    \"completed\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "bruno",
+      "event": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "protocol",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "host",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "port",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

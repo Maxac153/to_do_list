@@ -29,7 +29,7 @@ public class TasksController {
     public Task getTask(@PathVariable Long id) { return service.getTaskById(id); }
 
     @PostMapping("/createTask")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    // @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public Task createTask(@RequestBody Task task) { return service.createTask(task); }
 
     @DeleteMapping("/deleteTask/{id}")
