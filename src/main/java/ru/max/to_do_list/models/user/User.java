@@ -28,8 +28,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

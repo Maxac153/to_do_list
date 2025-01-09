@@ -19,7 +19,6 @@ import ru.max.to_do_list.service.UserService;
 
 import javax.naming.AuthenticationException;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @AllArgsConstructor

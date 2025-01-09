@@ -1,7 +1,6 @@
 package ru.max.to_do_list.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ru.max.to_do_list.models.response.Response;
 import ru.max.to_do_list.models.task.Task;
