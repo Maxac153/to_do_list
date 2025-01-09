@@ -4,8 +4,8 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.max.to_do_list.models.Response;
-import ru.max.to_do_list.models.Task;
+import ru.max.to_do_list.models.response.Response;
+import ru.max.to_do_list.models.task.Task;
 import ru.max.to_do_list.repository.TasksRepository;
 import ru.max.to_do_list.service.TasksService;
 
@@ -45,24 +45,23 @@ public class TasksServiceImpl implements TasksService {
 
         if (existingTaskOptional.isEmpty()) {
             return Response.builder()
-                    .message("Task not found")
+                    .message("Task not found!")
                     .status("ERROR")
                     .build();
         }
 
         Task existingTask = existingTaskOptional.get();
-
         if (existingTask.getCompleted() == null || !existingTask.getCompleted()) {
             existingTask.setCompleted(true);
             repository.save(existingTask);
 
             return Response.builder()
-                    .message("Task marked as completed successfully")
+                    .message("Task marked as completed successfully.")
                     .status("SUCCESS")
                     .build();
         } else {
             return Response.builder()
-                    .message("Task is already completed")
+                    .message("Task is already completed!")
                     .status("INFO")
                     .build();
         }
@@ -71,11 +70,11 @@ public class TasksServiceImpl implements TasksService {
     @Override
     @Transactional
     public Response updateTask(Long id, Task task) {
-        Optional<Task> existingTaskOptional = repository.findById(id);
+        Optional<Task> existingTaskOptional = repository.findById(Long.valueOf(id));
 
         if (existingTaskOptional.isEmpty()) {
             return Response.builder()
-                    .message("Task not found")
+                    .message("Task not found!")
                     .status("ERROR")
                     .build();
         }
@@ -100,7 +99,7 @@ public class TasksServiceImpl implements TasksService {
         repository.save(existingTask);
 
         return Response.builder()
-                .message("Task updated successfully")
+                .message("Task updated successfully.")
                 .status("SUCCESS")
                 .build();
     }
@@ -111,14 +110,14 @@ public class TasksServiceImpl implements TasksService {
         Optional<Task> existingTaskOptional = repository.findById(id);
         if (existingTaskOptional.isEmpty()) {
             return Response.builder()
-                    .message("Task not found")
+                    .message("Task not found!")
                     .status("ERROR")
                     .build();
         }
 
         repository.deleteById(id);
         return Response.builder()
-                .message("Task deleted successfully")
+                .message("Task deleted successfully.")
                 .status("SUCCESS")
                 .build();
     }

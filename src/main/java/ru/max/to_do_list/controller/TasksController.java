@@ -1,9 +1,10 @@
 package ru.max.to_do_list.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import ru.max.to_do_list.models.Response;
-import ru.max.to_do_list.models.Task;
+import ru.max.to_do_list.models.response.Response;
+import ru.max.to_do_list.models.task.Task;
 import ru.max.to_do_list.service.TasksService;
 
 import java.util.List;
@@ -25,27 +26,21 @@ public class TasksController {
     }
 
     @GetMapping("/task/{id}")
-    public Task getTask(@PathVariable Long id) {
-        return service.getTaskById(id);
-    }
+    public Task getTask(@PathVariable Long id) { return service.getTaskById(id); }
 
     @PostMapping("/createTask")
-    public Task createTask(@RequestBody Task task) {
-        return service.createTask(task);
-    }
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    public Task createTask(@RequestBody Task task) { return service.createTask(task); }
 
     @DeleteMapping("/deleteTask/{id}")
-    public Response deleteTask(@PathVariable Long id) {
-        return service.deleteTask(id);
-    }
+    // @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    public Response deleteTask(@PathVariable Long id) { return service.deleteTask(id); }
 
     @PutMapping("/updateTask/{id}")
-    public Response updateTask(@PathVariable Long id, @RequestBody Task task) {
-        return service.updateTask(id, task);
-    }
+    // @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    public Response updateTask(@PathVariable Long id, @RequestBody Task task) { return service.updateTask(id, task); }
 
     @PatchMapping("/completeTask/{id}")
-    public Response completeTask(@PathVariable Long id) {
-        return service.completeTask(id);
-    }
+    // @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    public Response completeTask(@PathVariable Long id) { return service.completeTask(id); }
 }

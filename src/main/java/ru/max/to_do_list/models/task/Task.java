@@ -1,4 +1,4 @@
-package ru.max.to_do_list.models;
+package ru.max.to_do_list.models.task;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
